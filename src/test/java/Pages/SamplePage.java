@@ -117,10 +117,18 @@ public class SamplePage extends BasePage {
     }
 
     public void loginIn(){
-        driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[5]/android.widget.EditText[1]").sendKeys("demouser8");
-        //android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[7]/android.widget.EditText[1]
-        driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[7]/android.widget.EditText[1]").sendKeys("demouser8");
-        driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[8]/android.view.View[1]/android.widget.Button[1]").click();
+         try {
+             driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[5]/android.widget.EditText[1]").sendKeys("demouser8");
+             //android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[7]/android.widget.EditText[1]
+             driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[7]/android.widget.EditText[1]").sendKeys("password1");
+
+             Thread.sleep(10000);
+             driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[8]/android.view.View[1]/android.widget.Button[1]").click();
+             Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
 //        userNameField.sendKeys(userName);
 //        passwordField.sendKeys(password);
 //        loginButton.click();

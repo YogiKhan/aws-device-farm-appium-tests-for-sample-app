@@ -63,6 +63,11 @@ public class SampleTest extends TestBase {
     @Test
     public void clickSignIn(){
         samplePage.clickSignIn();
+        try {
+            Thread.sleep(40000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
