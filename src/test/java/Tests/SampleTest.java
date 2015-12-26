@@ -75,6 +75,12 @@ public class SampleTest extends TestBase {
         samplePage.loginIn();
     }
 
+    @Test
+    public void clickUTodayQuestion(){
+        samplePage.clickTodayQuestion();
+
+    }
+
 //    public void loginSuccessFully(){
 //        loginPage.loginIn(CORRECT_USER_NAME, CORRECT_PASSWORD);
 //        Assert.assertEquals(loginPage.getMessage(), LOGIN_SUCCESS_MESSAGE);

@@ -45,6 +45,41 @@ public class SamplePage extends BasePage {
     @AndroidFindBy(id = "sign_in")
     private MobileElement signInButton;
 
+    @AndroidFindBy(id="go")
+    private MobileElement GoButton;
+
+    @AndroidFindBy(id="questionAnswerSample")
+    private MobileElement questionAnswerSampleButton;
+
+    @AndroidFindBy(id="questionAnswer")
+    private MobileElement questionAnswerButton;
+
+    @AndroidFindBy(id="hint")
+    private MobileElement hintButton;
+
+    @AndroidFindBy(id="statsButton")
+    private MobileElement statsButton;
+
+    @AndroidFindBy(id="title_text")
+    private MobileElement titleText;
+
+    @AndroidFindBy(id="moreQuestions")
+    private MobileElement moreQuestions;
+
+    @AndroidFindBy(id="fiveQuestion2")
+    private MobileElement fiveQuestion2;
+
+    @AndroidFindBy(id="continueButton")
+    private MobileElement continueButton;
+
+    @AndroidFindBy(id="sort")
+    private MobileElement sort;
+
+    @AndroidFindBy(id="date")
+    private MobileElement date;
+
+
+
 //
 //    @AndroidFindBy(id = "login_button")
 //    private MobileElement loginButton;
@@ -116,45 +151,164 @@ public class SamplePage extends BasePage {
         signInButton.click();
     }
 
-    public void loginIn(){
-         try {
-             driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[5]/android.widget.EditText[1]").sendKeys("demouser8");
-             //android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[7]/android.widget.EditText[1]
-             driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[7]/android.widget.EditText[1]").sendKeys("password1");
+    public void loginIn() {
+        try {
+            driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[5]/android.widget.EditText[1]").sendKeys("demouser8");
+            //android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[7]/android.widget.EditText[1]
+            driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[7]/android.widget.EditText[1]").sendKeys("password1");
 
-             Thread.sleep(10000);
-             driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[8]/android.view.View[1]/android.widget.Button[1]").click();
-             Thread.sleep(10000);
+            Thread.sleep(10000);
+            driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[8]/android.view.View[1]/android.widget.Button[1]").click();
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-//        userNameField.sendKeys(userName);
-//        passwordField.sendKeys(password);
-//        loginButton.click();
     }
 
-//    /**
-//     *
-//     * @return the login message
-//     */
-//    public String getMessage(){
-//        return driver.findElementById("login_alt_message_textView").getText();
-//    }
-//
-//    /**
-//     * Checks to see if back at login page
-//     *
-//     * @return is back at login
-//     */
-//    public boolean checkIfBackAtLogin(){
-//        return loginButton.isDisplayed() && userNameField.isDisplayed() && passwordField.isDisplayed();
-//    }
-//
-//    /**
-//     * Presses the logout/try again button
-//     */
-//    public void pressAltButton(){
-//        driver.findElementById("alt_button").click();
-//    }
+    public void clickTodayQuestion(){
+        try{
+            driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]").click();
+            Thread.sleep(10000);
+            GoButton.click();
+            Thread.sleep(5000);
+            questionAnswerSampleButton.click();
+            Thread.sleep(5000);
+            questionAnswerButton.click();
+            Thread.sleep(5000);
+            hintButton.click();
+
+            Thread.sleep(5000);
+            driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[1]").isDisplayed();
+
+            Thread.sleep(5000);
+            hintButton.click();
+
+            Thread.sleep(5000);
+            driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[3]").click();
+
+            Thread.sleep(5000);
+
+
+            driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[3]/android.widget.Button[1]").click();
+                                       //android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[3]/android.widget.Button[1]
+            Thread.sleep(10000);
+
+
+            //Select wrong answer
+
+            String wronganswer = driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]").getAttribute("name");
+            System.out.println(wronganswer);
+            String correctAnswer;
+
+                String answerOption = driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]").getAttribute("name");
+                System.out.println(answerOption);
+
+                String answerExplanation = driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[7]").getAttribute("name");
+                System.out.println(answerExplanation);
+
+                correctAnswer= driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[9]").getAttribute("name");
+                System.out.println(correctAnswer);
+
+                String correctAnswerExplanation= driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[12]").getAttribute("name");
+                System.out.println(correctAnswerExplanation);
+
+
+
+
+            Thread.sleep(5000);
+
+            statsButton.click();
+
+            String statusAnswer= driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]").getAttribute("name");
+            if(wronganswer.equals(statusAnswer)){
+                System.out.println("Test Passed");
+            }
+
+            String statusCorrectAnswer= driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[6]").getAttribute("name");
+            String difficulty= driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[8]").getAttribute("name");
+            if(wronganswer.equals(statusAnswer)){
+                System.out.println("Test Passed");
+            }
+
+            System.out.println(difficulty);
+            if(difficulty!=null){
+                System.out.println("Test Passed");
+            }
+
+            if(driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[10]").getAttribute("name")!=null){
+                System.out.println("Test Passed");
+            }
+
+            if(driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[12]").getAttribute("name")!=null){
+                System.out.println("Test Passed");
+            }
+
+            if(driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.Button[1]").getAttribute("name").contains("facebook")){
+                System.out.println("Test Passed");
+            }
+
+            if(driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.ListView[1]/android.view.View[2]/android.widget.Button[1]").getAttribute("name").contains("twitter")){
+                System.out.println("Test Passed");
+            }
+
+            if(driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[15]/android.widget.Button[1]").getAttribute("name").contains("Khan Academy")){
+                System.out.println("Test Passed");
+            }
+
+            Thread.sleep(7000);
+            driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.widget.ListView[1]/android.view.View[1]/android.widget.Button[1]").click();
+
+            Thread.sleep(7000);
+
+            statsButton.click();
+
+            Thread.sleep(3000);
+            String title= titleText.getText();
+            if(title.equals("Question Archive")){
+                System.out.println("Test Passed");
+            }
+
+            moreQuestions.click();
+
+            Thread.sleep(4000);
+            fiveQuestion2.click();
+
+            Thread.sleep(4000);
+            if(driver.findElementByXPath("//android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]").isDisplayed())
+            {
+                System.out.println("Test Passed");
+            }
+
+            continueButton.click();
+
+            Thread.sleep(15000);
+
+//            if(driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.TabHost[1]/android.widget.LinearLayout[2]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout[1]").isDisplayed()){
+//                System.out.println("Test Passed");
+//            }
+
+            String previousDate= date.getText();
+            Thread.sleep(4000);
+            sort.click();
+
+            Thread.sleep(4000);
+            String Nextdate= date.getText();
+
+            if(!previousDate.equals(Nextdate)){
+                System.out.println("Test Passed");
+            }
+
+            date.click();
+            Thread.sleep(10000);
+
+            if(!titleText.equals(Nextdate)) {
+                System.out.println("Test Passed");
+            }
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

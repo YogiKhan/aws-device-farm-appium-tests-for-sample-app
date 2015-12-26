@@ -97,7 +97,7 @@ public abstract class TestBase {
      */
     @AfterSuite
     public void tearDownAppium(){
-        driver.quit();
+        //driver.quit();
     }
 
     /**
@@ -118,6 +118,6 @@ public abstract class TestBase {
      */
     @AfterClass
     public void restartApp() {
-        driver.resetApp();
+        //driver.resetApp();
     }
 }
