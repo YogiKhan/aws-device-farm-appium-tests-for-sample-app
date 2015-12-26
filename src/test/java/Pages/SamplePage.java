@@ -15,12 +15,15 @@
 
 package Pages;
 
+import java.io.File;
 import java.lang.Thread;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.SwipeElementDirection;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 /**
  * A login page
@@ -143,8 +146,16 @@ public class SamplePage extends BasePage {
 
     }
 
+
+    public boolean takeScreenshot(final String name) {
+        String screenshotDirectory = System.getProperty("appium.screenshots.dir", System.getProperty("java.io.tmpdir", ""));
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        return screenshot.renameTo(new File(screenshotDirectory, String.format("%s.png", name)));
+    }
+
     public void clickMenu(){
         menuIcon.click();
+        takeScreenshot("menu");
     }
 
     public void clickSignIn(){
@@ -158,6 +169,7 @@ public class SamplePage extends BasePage {
             driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[7]/android.widget.EditText[1]").sendKeys("password1");
 
             Thread.sleep(10000);
+            takeScreenshot("login");
             driver.findElementByXPath("//android.view.View[1]/android.widget.FrameLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]/android.view.View[8]/android.view.View[1]/android.widget.Button[1]").click();
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -168,15 +180,20 @@ public class SamplePage extends BasePage {
 
     public void clickTodayQuestion(){
         try{
+            takeScreenshot("QOTD");
             driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]").click();
             Thread.sleep(10000);
             GoButton.click();
             Thread.sleep(5000);
+            takeScreenshot("questionAnswerSampleButton");
             questionAnswerSampleButton.click();
             Thread.sleep(5000);
+            takeScreenshot("questionAnswerButton");
             questionAnswerButton.click();
             Thread.sleep(5000);
+            takeScreenshot("hint");
             hintButton.click();
+
 
             Thread.sleep(5000);
             driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.widget.LinearLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[1]").isDisplayed();
@@ -189,7 +206,7 @@ public class SamplePage extends BasePage {
 
             Thread.sleep(5000);
 
-
+             takeScreenshot("answerPage");
             driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[3]/android.widget.Button[1]").click();
                                        //android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[3]/android.widget.Button[1]
             Thread.sleep(10000);
@@ -200,13 +217,13 @@ public class SamplePage extends BasePage {
             String wronganswer = driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]").getAttribute("name");
             System.out.println(wronganswer);
             String correctAnswer;
-
+            takeScreenshot("wrongAnswer");
                 String answerOption = driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[4]").getAttribute("name");
                 System.out.println(answerOption);
 
                 String answerExplanation = driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[7]").getAttribute("name");
                 System.out.println(answerExplanation);
-
+            takeScreenshot("answerExplanation");
                 correctAnswer= driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[9]").getAttribute("name");
                 System.out.println(correctAnswer);
 
@@ -217,7 +234,7 @@ public class SamplePage extends BasePage {
 
 
             Thread.sleep(5000);
-
+            takeScreenshot("stats");
             statsButton.click();
 
             String statusAnswer= driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[2]").getAttribute("name");
@@ -263,14 +280,15 @@ public class SamplePage extends BasePage {
 
             statsButton.click();
 
+            takeScreenshot("anyname");
             Thread.sleep(3000);
             String title= titleText.getText();
             if(title.equals("Question Archive")){
                 System.out.println("Test Passed");
             }
-
+            takeScreenshot("moreQuestions");
             moreQuestions.click();
-
+            takeScreenshot("fiveQuestion2");
             Thread.sleep(4000);
             fiveQuestion2.click();
 
@@ -279,18 +297,22 @@ public class SamplePage extends BasePage {
             {
                 System.out.println("Test Passed");
             }
-
+            takeScreenshot("continueButton");
             continueButton.click();
 
-            Thread.sleep(15000);
+            Thread.sleep(25000);
 
 //            if(driver.findElementByXPath("//android.widget.RelativeLayout[1]/android.view.View[1]/android.view.View[1]/android.widget.FrameLayout[2]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.TabHost[1]/android.widget.LinearLayout[2]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.ListView[1]/android.widget.RelativeLayout[1]").isDisplayed()){
 //                System.out.println("Test Passed");
 //            }
 
+             takeScreenshot("previousDate");
+
             String previousDate= date.getText();
             Thread.sleep(4000);
             sort.click();
+
+            takeScreenshot("nextDate");
 
             Thread.sleep(4000);
             String Nextdate= date.getText();
@@ -300,6 +322,8 @@ public class SamplePage extends BasePage {
             }
 
             date.click();
+
+            takeScreenshot("AgainNextPage");
             Thread.sleep(10000);
 
             if(!titleText.equals(Nextdate)) {
